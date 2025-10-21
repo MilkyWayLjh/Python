@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getCount(str) {
+            str = str.toLocaleLowerCase();
+            let arr = [];
+            for(let i = 0; i < str.length; i++) {
+                let key = str[i];
+                arr[key] ? arr[key]++ : arr[key] = 1;
+            }
+            // console.log(arr)
+            for (let key in arr) {
+                console.log(key + '有' + arr[key] + '个')
+            }
+        }
+        let str = 'hello world qwerrwqqasdsa';
+        getCount(str);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            width: 800px;
+            height: 800px;
+            margin: 0 auto;
+            background-color: aqua;
+            position: relative;
+        }
+        .inner {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            position:absolute;
+            top: calc(50% - 50px);
+            left: calc(50% - 50px);
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+    <script>
+        console.log(Boolean(null)) // false
+        console.log(Boolean(undefined)) // false
+        console.log(Boolean(0)) // false
+        console.log(Boolean('0')) // true
+    </script>
+    <script>
+        let ar = [32,2,7,78,90,10];
+        ar.sort((a, b) => {
+                return a - b;
+                // return b - a;
+        })
+        console.log(ar);
+
+        var arr = [23,45,22,67,12,45,35,78,93,17,54,36,56,64,4,1,7,60];
+        //从小到大依次排序
+        function sortFun(arr){ //封装一个名为sortFun的函数
+            var temp = 0; //定义一个变量，作为变量交换的中间量
+            for(var i = 0; i < arr.length; i++){    //确定循环的次数
+                for(var j = 0; j < arr.length - i; j++){ //确定相邻两个元素之间的位置
+                    if(arr[j] > arr[j + 1]){ //通过判断比较相邻两个元素的大小
+                        temp = arr[j];    //将比较的最大的值赋值给中间量
+                        arr[j] = arr[j + 1];    //将比较的最小的值赋值给arr[j];
+                        arr[j + 1] = temp;    //将最大的那个中间值再赋值给arr[j+1]
+                    }
+                }
+            }
+            console.log(arr)
+        }
+        sortFun(arr);
+        
+        //从大到小依次排序
+        function sortFun1(arr){ //封装一个名为sortFun的函数
+            var temp = 0; //定义一个变量，作为变量交换的中间量
+            for(var i = 0; i < arr.length; i++){    //确定循环的次数
+                for(var j = 0;j < arr.length - i; j++){ //确定相邻两个元素之间的位置
+                    if(arr[j] < arr[j + 1]){ //通过判断比较相邻两个元素的大小
+                        temp = arr[j];    //将比较的最小的值赋值给中间量
+                        arr[j] = arr[j + 1];    //将比较的最大的值赋值给arr[j];
+                        arr[j + 1] = temp;    //将最小的那个中间值再赋值给arr[j+1]
+                    }
+                }
+            }
+            console.log(arr)
+        }
+        sortFun1(arr);
+    </script>
+</body>
+</html>

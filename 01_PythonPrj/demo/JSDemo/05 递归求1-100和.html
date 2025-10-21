@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo" style="line-height: 12px;"></p>
+    <script>
+        function sum(n) {
+            if(n === 1) {
+                return 1;
+            }
+            return sum(n - 1) + n;
+        }
+        console.log(sum(100));
+
+        // 斐波那契数列：当前项=前两项之和  num(n)=num(n-1)+num(n-2)
+        // var num = prompt("请输入一个大于2的项数以计算斐波那契数列值");
+        // function fbnq(num) {
+        //     if (num == 1 || num == 2) {
+        //         return 1;
+        //     }
+        //     return fbnq(num - 1) + fbnq(num - 2);
+        // }
+        // alert("第" + num + "项的值为：" + fbnq(num));
+    </script>
+    <!-- <script>
+        // 打印1~100中的偶数
+        for (var i = 2; i <= 100; i += 2) {
+            document.write(i + "&nbsp;&nbsp;");
+        }
+        document.write("<br>");
+        for(var a = 1; a <= 100; a++) {
+            b = a%2;
+            if(b == 0) {
+                // alert(a);
+                // console.log(a);
+                document.write(a + "&nbsp;&nbsp;");
+                // document.getElementById("demo").innerHTML = a;
+            }
+        }
+        document.write("<br>" + "循环结果，最终a为：" + a + "<br>");
+        document.getElementById("demo").innerHTML = "打印结束，结果为：";
+        document.write("<hr>");
+
+        document.write("100~999中的水仙花数为：");
+        // 找三位数里的“水仙花数”并输出。
+        // 条件1:三位数，得全部列举出来100~999，
+        // 条件2∶水仙花数，每一个位数的三次方，他们的和，还等于原来的三位数，通过判断找到符合条件的水仙花数。
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 0; j <= 9; j++) {
+                for (var k = 0; k <= 9; k++) {
+                    var a = i * 100 + j * 10 + k * 1;
+                    // document.write(a + "&nbsp;&nbsp;");
+                    var b = Math.pow(i,3) + Math.pow(j,3) + Math.pow(k,3);
+                    if (a == b) {
+                        document.write(a + "&nbsp;&nbsp;");
+                    }
+                }
+            }
+        }
+        document.write("<hr>");
+
+        // 找出任意一个正整数的约数及其总个数。
+        var num = prompt("输入一个正整数以查找其约数");
+        var sum = 0;
+        document.write(num + "的约数为：");
+        for (var c = 1; c <= num; c++) {
+            if (num % c == 0) {
+                document.write(c + "&nbsp;&nbsp;");
+                sum++;
+            }
+        }
+        document.write("<br>" + num + "的约数总个数为：" + sum + "个" + "<br>");
+        if (sum == 2) {
+            document.write("所以" + num + "是一个质数");
+        }else {
+            document.write("所以" + num + "不是一个质数");
+        }
+    </script> -->
+</body>
+</html>

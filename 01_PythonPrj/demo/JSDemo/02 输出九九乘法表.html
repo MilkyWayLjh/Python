@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            margin: 100px 700px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 1px solid #333;
+            background-color: pink;
+            transition: all 1s linear;
+        }
+        button:hover {
+            background-color: rgb(255, 145, 2);
+            width: 200px;
+            height: 200px;
+            transform: rotate(360deg);
+            color: seashell;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" onclick="mult()">查看乘法表</button>
+    <script>
+        function mult() {
+            for (var i = 1; i <= 9; i++) {
+                for (var j = 1; j <= i; j++) {
+                    document.write(j + "x" + i + "=" + i*j + "&nbsp;&nbsp;");
+                }
+                document.write("<br>");
+            }
+            // return i*j;
+        }
+    </script>
+</body>
+</html>

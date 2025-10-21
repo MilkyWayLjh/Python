@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机点名</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 400px;
+            background-color: aqua;
+            margin: auto;
+            position: relative;
+        }
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: thistle;
+            border-radius: 50%;
+            position: absolute;
+            left: 50px;
+            top: 10px;
+            text-align: center;
+            font-size: 40px;
+            line-height: 190px;
+        }
+        #btn {
+            width: 80px;
+            height: 50px;
+            background-color: skyblue;
+            border-radius: 25px;
+            position: absolute;
+            bottom: 120px;
+            left: 110px;
+            text-align: center;
+            font-size: 20px;
+            line-height: 48px;
+            cursor: pointer;
+        }
+        #btn:hover {
+            background-color: rgb(107, 177, 205);
+            color: bisque;
+        } 
+        #name {
+            width: 300px;
+            height: 80px;
+            background-color: rgb(204, 243, 247);
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            font-size: 20px;
+            line-height: 60px;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="box">幸运者</div>
+        <div id="btn">开始</div>
+        <div id="name"></div>
+    </div>
+
+    <script>
+        let arr = ['杨洪艳', '王双', '邓美龄', '刘倩', '黄瑶', '洪嘉琳', '聂楚乔', '李俊豪', '张江洪', '莫海龙',
+                    '何腾锐', '郭远航', '杨雯', '邱勇', '鄢文浩', '安菲', '谢磊', '成涛', '廖坤林', '郑善文'];
+        let box = document.getElementById('box');
+        let name = document.getElementById('name');
+        let t;
+        function randomName() {
+            t = setInterval( () => {
+                let n = Math.floor(Math.random() * arr.length);
+                box.innerHTML = arr[n];
+            }, 50)
+        }
+        let btn = document.getElementById('btn');
+        let arr1 = [];
+        let started = true;
+        btn.onclick = function() {
+            if (started) {
+                randomName();
+                btn.innerHTML = "停止";
+            } else {
+                clearInterval(t);
+                btn.innerHTML = "开始";
+                let p = box.innerHTML;
+                arr1.push(p);
+                // name.innerHTML = arr1;  // 得把arr1转换为字符串 要好一点，这样编辑器就不会报提示
+                name.innerHTML = arr1.join();   // join() 不写参数，默认以 , 隔开每个元素
+            }
+            started = !started;
+        };
+
+        // function randomName() {
+        //     let n = Math.floor(Math.random() * arr.length);
+        //     box.innerHTML = arr[n];
+        // }
+        // btn.onclick = function() {
+        //     randomName();
+        //     let p = box.innerHTML;
+        //     arr1.push(p);
+        //     name.innerHTML = arr1;
+        // };
+    </script>
+</body>
+</html>

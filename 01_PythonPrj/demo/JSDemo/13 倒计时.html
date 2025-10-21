@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <button id="btn"></button>
+    <script>
+        // document.getElementById('app').style.float = 'left';
+        // document.getElementById('app').style.color = 'red';
+        document.getElementById('app').style = 'float: left; color: red';
+        let t;
+        function main() {
+            t = setInterval(function() {
+                // 获取开始时间戳
+                let start = new Date('2023-01-22').getTime();
+                // 获取当前时间戳        
+                let now = new Date().getTime();
+                // let now = Date.now();
+                // 计算差值
+                let time = start - now;
+                // console.log(start, now, time);
+                // 获取 秒 分 时 天
+                let sec = time / 1000,
+                    min = sec / 60,
+                    hour = min / 60,
+                    day = hour / 24;
+                // console.log(day, hour, min, sec);
+                document.getElementById('app').innerHTML = '距离春节还有：' +
+                                                            Math.floor(day) + '天 ' + 
+                                                            Math.floor(hour % 24) + '小时 ' + 
+                                                            Math.floor(min % 60) + '分 ' + 
+                                                            Math.floor(sec % 60) + '秒 ';
+            })
+        }
+        main();
+        
+        let b = document.getElementById('btn');
+        b.style.marginLeft = '5px';
+        b.innerHTML = '停止倒计时';
+        b.onclick = function() {
+            clearInterval(t);
+        }
+    </script>
+</body>
+</html>
