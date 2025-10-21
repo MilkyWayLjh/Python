@@ -20,7 +20,7 @@ class Singleton:
 
     def __new__(cls, *args, **kwargs):
         if not cls.__instance:
-            cls.__instance = super().__new__(cls, *args, **kwargs)
+            cls.__instance = super().__new__(cls)
         return cls.__instance
 
 s1 = Singleton()
@@ -43,7 +43,7 @@ class Singleton:
     def __new__(cls, name, age, *args, **kwargs):
         # 没有创建对象才创建
         if not cls.__instance:
-            cls.__instance = super().__new__(cls, *args, **kwargs)
+            cls.__instance = super().__new__(cls)
         return cls.__instance
 
     # 初始化属性
@@ -57,6 +57,7 @@ class Singleton:
     def __str__(self):
         return "我的名字为%s,今年%d" % (self.name, self.age)
 
+
 # 创建两次对象
 s1 = Singleton('亚索', 22)
 s2 = Singleton('永恩', 23)
@@ -64,5 +65,3 @@ print(s1)
 print(s2)   # 第二个对象创建失败
 # 我的名字为亚索,今年22
 # 我的名字为亚索,今年22
-
-

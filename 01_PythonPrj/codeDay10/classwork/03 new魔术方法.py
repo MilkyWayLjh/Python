@@ -23,11 +23,11 @@ __new__方法注意事项:
 
 # class Person(object): # 继承自object类
 class Person:
-    def __new__(cls, name, *args, **kwargs):
+    def __new__(cls, *args, **kwargs):
         # 返回父类的new方法
         # return object.__new__(cls, *args, **kwargs)
-        print(super().__new__(cls, *args, **kwargs))
-        return super().__new__(cls, *args, **kwargs)
+        print(super().__new__(cls))
+        return super().__new__(cls)
 
     def __init__(self, name):
         print(self, name)
@@ -38,3 +38,24 @@ p1 = Person('Zeus')
 
 # p2 = Person()
 # print(p2)
+
+
+'''
+深度详解：
+    在Python中，__new__方法是一个重要的魔法方法，它负责在对象创建过程中分配内存空间并返回对象的引用。
+    __new__方法是Python中真正的构造器，它在__init__方法之前被调用。
+    当你使用类名()创建对象时，Python解释器首先调用__new__方法为对象分配空间，然后将返回的对象引用传递给__init__方法进行初始化
+    __new__方法的主要作用有两个：
+        在内存中为对象分配空间
+        返回对象的引用
+        
+__new__与__init__的区别：
+    执行顺序‌：__new__先执行，__init__后执行
+    职责分工‌：__new__负责创建对象（分配内存），__init__负责初始化对象
+    返回值‌：__new__必须返回对象的引用，__init__不返回任何值（返回None）
+
+总结：
+    重写Python中的__new__方法是一个强大的特性，它允许开发者深入控制对象的创建过程。
+    无论是实现单例模式、限制实例数量，还是定制不可变类型的行为，正确使用__new__方法都能带来极大的灵活性。
+    记住关键点：__new__负责创建对象，__init__负责初始化对象，且__new__必须返回对象的引用
+'''
