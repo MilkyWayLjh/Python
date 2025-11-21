@@ -17,8 +17,9 @@ class NameError(Exception):
 
 
 class LenError(Exception):  # 自定义异常
-    def __str__(self):
+    def __str__(self):  # 打印实例时返回描述信息
         return '长度不符合要求'
+
 
 """
 抛出自定义异常
@@ -38,6 +39,6 @@ try:
     else:
         raise LenError()    # 抛出异常, 抛出错误信息  长度错误类型：长度不符合要求
 except LenError as e:   # 捕获异常
-    print('抛出异常')
+    print('捕获异常')
     print(e)
-
+    print(LenError())

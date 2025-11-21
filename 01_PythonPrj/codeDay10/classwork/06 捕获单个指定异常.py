@@ -10,7 +10,8 @@ try:
     result = 1 / num    # 分别输入 1、0、hello
 except ZeroDivisionError:   # 如果类型指定错误，会抛出异常，也就不会执行下面的代码块
     print('0不能被除!')
+# except Exception as e:   # 如果类型指定错误，会抛出异常，也就不会执行下面的代码块
+#     print(e)
+#     print('0不能被除!')
 
 print('Hello Zeus!')
-
-

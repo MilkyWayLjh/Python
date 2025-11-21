@@ -22,4 +22,3 @@ try:
     print(result)
 except (ZeroDivisionError, ValueError) as e:
     print(e)
-

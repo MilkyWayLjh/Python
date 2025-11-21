@@ -17,7 +17,6 @@ except Exception as e:
     # print('输入的数字不合法')
 
 # 第二种方式
-"""
 try:
     num = int(input('数字：'))
     result = 1 / num
@@ -25,5 +24,3 @@ try:
 # except Exception:
 except:
     print('输入的数字不合法')
-"""
-

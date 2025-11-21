@@ -20,4 +20,3 @@ result = 1 / num
 print(result)   # 1/0  ZeroDivisionError: division by zero
 
 print(111)
-

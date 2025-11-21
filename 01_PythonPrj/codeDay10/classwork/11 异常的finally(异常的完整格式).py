@@ -22,8 +22,7 @@ except Exception as e:
 else:
     content = f.read()
     print('读取成功! 即将显示...')
-    print(content)
+    print(f'>>>{content}')
 finally:
     f.close()
-    print('文件已关闭.')
-
+    print('文件已关闭')

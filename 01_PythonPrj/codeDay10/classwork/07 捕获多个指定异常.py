@@ -33,5 +33,3 @@ except ZeroDivisionError:
     print('输入的数字不能是0!')
 except ValueError:
     print('输入的不能是非数字!')
-
-

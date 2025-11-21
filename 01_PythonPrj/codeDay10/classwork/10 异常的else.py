@@ -15,5 +15,3 @@ except Exception as e:
     print(e)
 else:
     print(f'没有异常，1 ➗ {num} = {result}')
-
-
