@@ -12,5 +12,5 @@ def fn3():
     except ZeroDivisionError as e:
         print(e)
 
-fn3()
 
+fn3()

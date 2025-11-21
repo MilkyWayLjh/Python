@@ -61,8 +61,7 @@ def do_call(obj):
     except Exception as e:
         print(e)
 
+
 do_call(Dog())
 do_call(Cat())
 do_call(Person())
-
-

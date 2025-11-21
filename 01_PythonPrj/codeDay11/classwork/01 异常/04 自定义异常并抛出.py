@@ -15,6 +15,7 @@ class LenError(Exception):
     def __str__(self):
         return '长度不符合规范'
 
+
 # 用户注册
 # 验证用户名长度 6 - 18 位
 # 接收用户名
@@ -33,5 +34,3 @@ try:
         raise LenError()    # raise抛出异常类的对象
 except LenError as e:
     print(e)
-
-

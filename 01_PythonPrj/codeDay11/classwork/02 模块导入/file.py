@@ -57,5 +57,3 @@ if __name__ == '__main__':
     # File.copy('demo.txt')
     # File.rename('demo-副本-副本.txt', 'demo01.txt')
     # File.delete('demo01.txt')
-
-
