@@ -42,13 +42,13 @@ def wrapper1(num):
     return inner
 
 
-wrapper(f)
-wrapper(f)()
+wrapper(f)  # f(), inner    ---> 123
+wrapper(f)()    # f(), inner()  ---> 123 1
 
-print(wrapper1(1))
+print(wrapper1(1))      # <function wrapper1.<locals>.inner at 0x000001EC1F2920E0>
 print('---')
-print(wrapper1(1)())
+print(wrapper1(1)())    # 1
 
 fn = wrapper1(10)   # wrapper1(10) = inner
 print('---')
-print(fn())
+print(fn())     # 10
