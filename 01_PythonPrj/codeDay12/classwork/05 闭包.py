@@ -41,6 +41,7 @@ def wrapper1(num):
 
     return inner
 
+
 wrapper(f)
 wrapper(f)()
 
@@ -51,4 +52,3 @@ print(wrapper1(1)())
 fn = wrapper1(10)   # wrapper1(10) = inner
 print('---')
 print(fn())
-

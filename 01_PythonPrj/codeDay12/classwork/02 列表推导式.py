@@ -39,4 +39,14 @@ print('--' * 20)
 # 列表推导式
 li7 = [(i, j) for i in range(1, 3) for j in range(1, 3)]
 print(li7)
+print('--' * 20)
+'''
+字典推导式
+'''
+listdemo = ['Google', 'Runoob', 'Taobao']
+# 将列表中各字符串值为键，各字符串的长度为值，组成键值对
+newdict = {key: len(key) for key in listdemo}
+print(newdict)
 
+dic = {x: x**2 for x in (2, 4, 6)}
+print(dic)

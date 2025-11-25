@@ -79,6 +79,7 @@ class MyNumbers:
         else:
             raise StopIteration
 
+
 myclass = MyNumbers()
 myiter = iter(myclass)
 
@@ -106,6 +107,7 @@ def fibonacci(n):  # 生成器函数 - 斐波那契
         a, b = b, a + b
         count += 1
 
+
 f = fibonacci(10)  # f 是一个迭代器，由生成器返回生成
 
 while True:
@@ -113,5 +115,3 @@ while True:
         print(next(f), end="\t")
     except StopIteration:
         sys.exit()
-
-

@@ -2,7 +2,7 @@
 import copy
 
 dict1 = {
-    'name': '马保国',
+    'name': '马sir',
     'age': '70',
     'skill': {
         'Q': '闪电五连鞭',
@@ -27,6 +27,7 @@ def _copy(dic, mode):
 def my_copy(dic):
     return copy.copy(dic), copy.deepcopy(dic)   # 返回多个值为 元组
 
+
 if __name__ == '__main__':
     # dict2 = _copy(dict1, 'shallow')
     # dict3 = _copy(dict1, 'deep')
@@ -38,4 +39,6 @@ if __name__ == '__main__':
     print('===' * 40)
     print(dict1, id(dict1), id(dict1['skill']))     # id(dict1['skill']) -> 28670448
     print(dict3, id(dict3), id(dict3['skill']))     # id(dict3['skill']) -> 34133552
-
+    print('===' * 40)
+    dict1['skill']['Q'] = '技能被修改了'
+    print(dict1, dict2, dict3, sep='\n')    # dict1 / dict2改变. dict3不改变
