@@ -1,29 +1,11 @@
 import time
 
 
-def decorator(fn):
-    def inner(*args, **kwargs):
-        # 开始时间
-        start = time.time()
-        result = fn(*args, **kwargs)
-        end = time.time()
-        print(f'运行时间为：{end - start}')
-        return result
-    return inner
-
-
-@decorator
-def info():
-    for i in range(1000000):
-        pass
-
-
 def check(fn):
     def inner(*args, **kwargs):
         print('登录验证')
         result = fn(*args, **kwargs)
         return result
-
     return inner
 
 
@@ -41,8 +23,24 @@ def comment():
     print('评论')
 
 
+def decorator(fn):
+    def inner(*args, **kwargs):
+        start = time.time()     # 增加前置开始时间记录
+        result = fn(*args, **kwargs)    # 运行被装饰的函数
+        end = time.time()   # 添加后置结束时间记录
+        print(f'运行时间为：{end - start}')   # 计算运行时间
+        return result
+    return inner
+
+
+@decorator
+def info():
+    for i in range(10000):
+        if i % 2 == 0:
+            print(i)
+
+
 if __name__ == '__main__':
+    info()
     post()
     comment()
-    info()
-

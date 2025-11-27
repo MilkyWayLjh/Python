@@ -50,5 +50,3 @@ print(random.sample(list1, 2))
 random.seed(None)
 list1 = ['python', 'mysql', 'linux', 'git', 'shell', '禅道']
 print(random.sample(list1, 2))
-
-

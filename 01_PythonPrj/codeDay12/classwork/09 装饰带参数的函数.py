@@ -11,7 +11,6 @@ def wrapper(fn):
 def demo(a, b):
     return a + b
 
+
 print(demo(1, 1))
 print(demo(2, 2))
-
-

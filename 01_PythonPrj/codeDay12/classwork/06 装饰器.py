@@ -25,10 +25,10 @@ def fn1():
 def fn2():
     print('this is fn2')
 
+
 # wrapper(fn1)()
 fn1 = wrapper(fn1)
 fn1()
 print('---'*3)
 fn2 = wrapper(fn2)
 fn2()
-
