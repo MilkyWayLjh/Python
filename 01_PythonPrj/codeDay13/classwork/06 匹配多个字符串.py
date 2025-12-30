@@ -51,5 +51,3 @@ print(re.search('a{1,}go', 'ago'))
 print(re.search('a{1,}go', 'aago'))
 print(re.search('a{1,}go', 'aaago'))
 print('===' * 20)
-
-

@@ -28,5 +28,3 @@ for item in os.listdir('resource'):
         os.rename('resource/' + item, 'resource/' + name)
 
 print(os.listdir('resource'))
-
-

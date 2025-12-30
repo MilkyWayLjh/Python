@@ -8,6 +8,7 @@ time模块
 """
 import time     # 内置模块 第一优先级 [掌握]
 
+print(time.time())
 time.sleep(1)
 
 # 1 time.time()     # 返回一个距19700101000000的秒数，是浮点数。
@@ -44,4 +45,3 @@ print(time.strftime('%Y-%m-%d %H:%M:%S', struct_time4))
 # 8 time.strptime(str,fmt)	将年月日时分秒的字符串按照fmt解析成struct_time结构。日期字符串转时间对象
 time_str = time.strftime('%Y-%m-%d %H:%M:%S', struct_time4)
 print(time.strptime(time_str, '%Y-%m-%d %H:%M:%S'))
-

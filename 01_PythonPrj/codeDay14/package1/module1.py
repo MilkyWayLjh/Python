@@ -1,4 +1,4 @@
-# from codeDay14.classwork.package1 import log, name
+# from codeDay14.package1 import log, name
 from __init__ import log, name
 
 print(log)

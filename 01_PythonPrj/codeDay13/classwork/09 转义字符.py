@@ -8,4 +8,3 @@ if re.search('^\w{1,32}\.[a-zA-Z0-9]{2,5}$', filename):
     print('文件格式正确')
 else:
     print('文件格式不正确')
-

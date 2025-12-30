@@ -28,7 +28,7 @@ group和groups是两个不同的函数。
 
     ● group() 同 group（0）就是匹配正则表达式整体结果
     ● group(1) 列出第一个括号匹配部分，group(2) 列出第二个括号匹配部分，group(3) 列出第三个括号匹配部分。
-    ● groups（）是把所有匹配出来的分组加入元组中
+    ● groups() 是把所有匹配出来的分组加入元组中
 
 ● 匹配模式
 匹配模式	            描述
@@ -61,8 +61,7 @@ print('===' * 20)
 
 # re.sub(pattern, repl, string, count=0, flags=0)
 s = 'day1'
-print(re.sub('^day[1-9]$', 'day01', s)) # day01
+print(re.sub('^day[1-9]$', 'day01', s))  # day01
 print(s)    # day1
 s = re.sub('^day[1-9]$', 'day01', s)
 print(s)    # day1
-

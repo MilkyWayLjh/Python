@@ -26,4 +26,3 @@ if re.search('^1[3-9]\d{9}$', phone):
     print('手机号格式正确')
 else:
     print('手机号格式错误')
-

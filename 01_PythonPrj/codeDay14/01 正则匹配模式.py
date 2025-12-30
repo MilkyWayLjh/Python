@@ -10,4 +10,3 @@ print(list1)
 
 # re.S
 print(re.search('hello.world', 'hello\nworld', re.S).group())
-

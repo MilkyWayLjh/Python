@@ -15,5 +15,3 @@ print(day7_ago)
 # 7天之后的时间
 day7_after = datetime_obj + timedelta_obj
 print(day7_after)
-
-

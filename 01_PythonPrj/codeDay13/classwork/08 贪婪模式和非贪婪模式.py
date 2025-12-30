@@ -27,4 +27,3 @@ str1 = '<html><head></head><body><h1>标题</h1></body></html>'
 print(re.search('<.+>', str1))
 # 非贪婪
 print(re.search('<.+?>', str1))
-

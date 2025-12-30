@@ -25,4 +25,3 @@ content = f.read()
 f.close()
 
 print(content)
-

@@ -92,4 +92,3 @@ print(re.search('\Wgo', '@go'))
 print(re.search('\Wgo', '$go'))
 print(re.search('\Wgo', '^go'))
 print('===' * 20)
-

@@ -23,4 +23,3 @@ with open('resource/demo.txt', 'w+', encoding='utf8') as f:
 
 # 在代码块with语句外也能访问
 print(content)
-

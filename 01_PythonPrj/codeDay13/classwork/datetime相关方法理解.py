@@ -26,4 +26,3 @@ if __name__ == '__main__':
 
     print(userinfo_obj.info())
     print(type(userinfo_obj.info()))
-
