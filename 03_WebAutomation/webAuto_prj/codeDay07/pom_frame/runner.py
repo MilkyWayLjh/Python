@@ -66,4 +66,3 @@ if __name__ == '__main__':
         )
         # runner调用run方法
         runner.run(discover)
-

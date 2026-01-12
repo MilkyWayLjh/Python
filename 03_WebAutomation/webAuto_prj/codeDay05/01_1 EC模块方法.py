@@ -44,4 +44,3 @@ alert_is_present:
     判断alert是否存在，若存在则切换到alert，若不存在则返回false
 
 """
-

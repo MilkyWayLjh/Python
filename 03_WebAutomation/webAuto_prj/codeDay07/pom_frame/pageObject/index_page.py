@@ -12,9 +12,9 @@ class IndexPage(Base):
     def index_login(self):
         self.base_click((By.PARTIAL_LINK_TEXT, '请登录'))
 
+
 if __name__ == '__main__':
     index = IndexPage()
     index.index_username_text()
     # index.index_logout()
     # index.index_logout()
-

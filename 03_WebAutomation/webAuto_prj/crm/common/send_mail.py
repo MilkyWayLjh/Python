@@ -37,4 +37,3 @@ class SendMail:
         smtp.login(self.sender, 'ndjyxjzddhfjcjdb')   # 邮箱授权码
         smtp.sendmail(self.sender, self.receiver, self.msg.as_string())
         smtp.quit()
-

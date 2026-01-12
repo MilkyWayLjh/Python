@@ -32,7 +32,7 @@
         4.当超过最大的等待时长以后,它会抛出:TimeOutException
         5.通常将显示等待用作断言,断言就是检查测试结果
         语法:
-         (1)WebDriverWait(driver, timeout, poll_frequency=POLL_FREQUENCY, ignored_exceptions=None)
+        (1)WebDriverWait(driver, timeout, poll_frequency=POLL_FREQUENCY, ignored_exceptions=None)
         driver:浏览器对象
         timeout:最大等待时间长
         poll_frequency:每次查找元素的时间间隔
@@ -45,52 +45,40 @@
         (3)until_not():它与until相反
 
         (4)EC模块
-         该模块主要用来对页面元素是否存在进行判断,它需要搭配WebDriverWait和Until方法一起使用
-         使用之前需要导入:
+        该模块主要用来对页面元素是否存在进行判断,它需要搭配WebDriverWait和Until方法一起使用
+        使用之前需要导入:
             from selenium.webdriver.support import expected_conditions as EC
 
 
 """
-from codeDay05.common.open_web import open_web
-
-# driver = open_web('http://www.baidu.com')
-#
-# driver.implicitly_wait(5)
-# driver.find_element_by_id('kw').send_keys(123)
-# driver.find_element_by_id('su1').click()
-# driver.quit()
-
-
-"""显示等待"""
-# from codeDay05.common.open_web import open_web
-# from selenium.webdriver.support.wait import WebDriverWait
-#
-# driver = open_web('http://www.baidu.com')
-#
-# try :
-#     result1 = WebDriverWait(driver,5,0.5).until(lambda x:x.find_element_by_id("kw1"))
-#     if result1 is not None:
-#         print('找到了该元素,上一步的操作是成功的')
-#         driver.find_element_by_id('kw').send_keys(123)
-# except :
-#     print('元素没有找到操作失败!')
-
-"""使用EC模块来实现显示等待"""
-from selenium import webdriver
+from codeDay05.common.open_web import *
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
 
-driver = webdriver.Chrome()
-driver.get('http://www.baidu.com')
-driver.maximize_window()
-locator = (By.ID, 'kw1')
+# driver = open_web('https://www.baidu.com')
+#
+# driver.implicitly_wait(5)
+# driver.find_element_by_id('chat-textarea').send_keys('123')
+# driver.find_element_by_id('chat-submit-button').click()
+# driver.quit()
+
+"""使用EC模块来实现显示等待"""
+driver = open_web('https://www.baidu.com')
+
+# locator为一个(by, path)元祖，这个(by, path)的by是Selenium的一个类(selenium.webdriver.common.by.By), path为元素的定位路径
+# 包括CLASS_NAME，CSS_SELECTOR，ID，LINK_TEXT，NAME，PARTIAL_LINK_TEXT，TAG_NAME和XPATH，和我们元素定位中使用的方法相同
+locator = (By.ID, 'chat-textarea')
 
 print(EC.visibility_of_element_located(locator))
 
 try:
-    result = WebDriverWait(driver, 5, 0.5).until(EC.element_to_be_clickable(locator))  # locator一定是元组格式
+    result = WebDriverWait(driver, 5, 0.5).until(
+        EC.element_to_be_clickable(locator), message='没有找到该元素')  # locator一定是元组格式
     if result is not None:
-        result.send_keys(1223)
+        result.send_keys('1223')
 except:
     print('该元素不存在')
+
+sleep(2)
+driver.quit()
