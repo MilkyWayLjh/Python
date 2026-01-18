@@ -1,9 +1,9 @@
 from selenium import webdriver
 from time import sleep
-# from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.service import Service as ChromeService
 
 driver = webdriver.Chrome()
-# service = ChromeService(executable_path="D:\ProgramData\Python\Python310\Scripts\chromedriver.exe")
+# service = ChromeService(executable_path=r"D:\ProgramData\Python\Python310\Scripts\chromedriver.exe")
 # options = webdriver.ChromeOptions()
 # driver = webdriver.Chrome(service=service, options=options)
 

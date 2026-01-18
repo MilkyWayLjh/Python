@@ -1,5 +1,7 @@
-from common.open_web import *
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
+from time import sleep
 import os
 
 # 准备配置项
@@ -17,7 +19,11 @@ prefs = {
 options.add_experimental_option('prefs', prefs)
 
 # 打开浏览器, 请求目标网址
-driver = webdriver.Chrome(options=options)
+# options = webdriver.ChromeOptions()
+# driver = webdriver.Chrome(options=options)
+service = ChromeService(executable_path=r"D:\ProgramData\Python\Python310\Scripts\chromedriver.exe")
+driver = webdriver.Chrome(options=options, service=service)
+
 driver.get('https://app.bilibili.com/?spm_id_from=333.1007.0.0')
 driver.maximize_window()
 

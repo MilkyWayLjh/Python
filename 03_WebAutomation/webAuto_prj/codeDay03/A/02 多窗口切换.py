@@ -10,7 +10,7 @@
     需求: 打开百度新闻窗口后,再回到百度首页输入切换窗口成功
 
 """
-from common.open_web import *
+from codeDay03.A.common.open_web import *
 from selenium.webdriver.common.by import By
 
 driver = open_web()
