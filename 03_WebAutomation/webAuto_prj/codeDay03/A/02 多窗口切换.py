@@ -16,7 +16,7 @@ from selenium.webdriver.common.by import By
 driver = open_web()
 
 driver.find_element(By.LINK_TEXT, '新闻').click()
-print("第二个窗口句柄", driver.current_window_handle)
+print("第1个窗口句柄", driver.current_window_handle)
 print("获取当前浏览器中打开的所有窗口句柄:", driver.window_handles)
 # 切换句柄
 driver.switch_to.window(driver.window_handles[1])
