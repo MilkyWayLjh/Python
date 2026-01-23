@@ -55,7 +55,7 @@ ActionChains类 其他方法
 16、send_keys(*keys_to_send)：发送某个键到当前焦点的元素
 17、send_keys_to_element(element, *keys_to_send)：发送某个键到指定元素
 """
-from common.open_web import *
+from codeDay03.A.common.open_web import *
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
@@ -95,7 +95,7 @@ ac = ActionChains(driver)
 ac.click_and_hold(source)
 sleep(1)
 # 鼠标偏移设置,并且释放,执行
-ac.move_by_offset(268, 0).release().perform()
+ac.move_by_offset(270, 0).release().perform()
 
 # 点击重置滑块
 driver.find_element(By.ID, 'reset').click()
@@ -104,7 +104,7 @@ sleep(1)
 # 重新获取元素(元素引用失效：source 元素在页面重置后已不存在)
 source = driver.find_element(By.CSS_SELECTOR, '.slider-btn')
 # 直接使用drag_and_drop_by_offset(source, xoffset, yoffset)方法, 因为没有目标元素，无法直接使用drag_and_drop()方法，所以xoffset和yoffset必须指定
-ac.drag_and_drop_by_offset(source, 268, 0).perform()
+ac.drag_and_drop_by_offset(source, 270, 0).perform()
 
 sleep(2)
 driver.quit()
