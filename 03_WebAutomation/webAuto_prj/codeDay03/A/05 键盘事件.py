@@ -18,7 +18,7 @@
     send_keys(Keys.F12) 键盘F12
 
 """
-from common.open_web import *
+from codeDay03.A.common.open_web import *
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
